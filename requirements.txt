@@ -1,1 +1,1 @@
-pip3 install IP2Location folium
+pip3 install IP2Location folium fade msvcrt colorama 
