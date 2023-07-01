@@ -2,6 +2,20 @@ import os , colorama , msvcrt , IP2Location , folium , time
 from colorama import Fore , Style
 from fade import fire
 
+inputuser = Fore.RED + "[" + Fore.WHITE + ">>>" + Fore.RED + "]"
+colon = Fore.WHITE + ':'
+colon2 =  Fore.WHITE + ': '
+yellow = Fore.YELLOW
+white = Fore.WHITE
+equals = Fore.WHITE + " == "
+red = Fore.RED
+wall = white + " | "
+programOutput = inputuser = Fore.RED + "[" + Fore.WHITE + ">" + Fore.RED + "]"
+b1 = red + "["
+b2 = red + "]"
+foliumOutput = Fore.RED + "[" + Fore.WHITE + "FOLIUM" + Fore.RED + "]"
+warn = Fore.RED + "[" + Fore.WHITE + "WARNING" + Fore.RED + "]"
+
 text = """
 
 ✷ 　 　　 　 ·
@@ -21,26 +35,10 @@ text = """
 TextF = fire(text)
 print(TextF)
 
-inputuser = Fore.RED + "[" + Fore.WHITE + ">>>" + Fore.RED + "]"
-colon = Fore.WHITE + ':'
-colon2 =  Fore.WHITE + ': '
-yellow = Fore.YELLOW
-white = Fore.WHITE
-equals = Fore.WHITE + " == "
-red = Fore.RED
-wall = white + " | "
-t = time.sleep(0.3)
-
 filename = input(inputuser + colon + red + 'Enter The Path To The IP2Location .BIN file' + wall + yellow)
 database = IP2Location.IP2Location(os.path.join('data', filename))
 rec = database.get_all(input(inputuser + colon + red + 'Enter IP ' + wall + yellow))
 time.sleep(3)
-
-programOutput = inputuser = Fore.RED + "[" + Fore.WHITE + ">" + Fore.RED + "]"
-
-
-b1 = red + "["
-b2 = red + "]"
 
 print(white + "----------------------------------------------------------")
 print(programOutput + colon2 + red + rec.country_short + equals + b1 + white + "COUNTRY_SHORT" + b2)
@@ -87,9 +85,6 @@ print(programOutput + colon2 + red + rec.address_type + equals + b1 + white + "A
 time.sleep(0.3)
 print(programOutput + colon2 + red + rec.category + equals + b1 + white + "CATEGORY" + b2)
 print(white + "----------------------------------------------------------")
-
-foliumOutput = Fore.RED + "[" + Fore.WHITE + "FOLIUM" + Fore.RED + "]"
-warn = Fore.RED + "[" + Fore.WHITE + "WARNING" + Fore.RED + "]"
 
 print(foliumOutput + colon + red + "GENERATING MAP")
 time.sleep(1.5)
