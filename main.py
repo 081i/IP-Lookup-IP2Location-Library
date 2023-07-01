@@ -1,5 +1,4 @@
-import os , colorama , msvcrt
-import IP2Location , folium , time
+import os , colorama , msvcrt , IP2Location , folium , time
 from colorama import Fore , Style
 from fade import fire
 
